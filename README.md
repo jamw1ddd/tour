@@ -1,2 +1,1 @@
-# tour
-tour project
+# Sayohatlar

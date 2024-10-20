@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block countries %}active{% endblock countries %}
+{% block content %}
+<!-- ***** Breadcumb Area Start ***** -->
+    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)"></div>
+    <!-- ***** Breadcumb Area End ***** -->
+
+    <!-- ***** Listing countries Area Start ***** -->
+    <section class="dorne-listing-countries-area section-padding-100-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading dark text-center">
+                        <span></span>
+                        <h4>Featured countries</h4>
+                        <p>Editor’s pick</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for country in countries %}
+                <!-- Single Features Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-features-area mb-50">
+                        <a href="{% url 'country' country.id %}">
+                        <img src="{{ country.image.url }}" alt="">
+                        </a>
+                        <!-- Price -->
+                        <div class="price-start">
+                            <p>{{ country.lowest_price|intcomma }} dan</p>
+                        </div>
+                        <div class="feature-content d-flex align-items-center justify-content-between">
+                            <div class="feature-title">
+                                <h5>{{ country.name }}</h5>
+                                <p>Party</p>
+                            </div>
+                            <div class="feature-favourite">
+                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- ***** Listing countries Area End ***** -->
+{% endblock content %}

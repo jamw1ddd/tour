@@ -1,0 +1,13 @@
+Sayohatlar.uz
+
+Demo
+Sahifalar:
+    -- Turlar(pagination, qidirish)
+    -- Tur detail 
+    -- Tur bron (bron)
+
+Modellar:
+    -- Country - name
+    -- Destination - name, country
+    -- Tour - name, description, destinations, countries, price, image
+
